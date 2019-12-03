@@ -8,5 +8,5 @@ module controls(
   output reg [7:0] freq3,
   output reg [7:0] freq4
 );
-  //And then actually make the module 
+  //And then actually make the module
 endmodule
