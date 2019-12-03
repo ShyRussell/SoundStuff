@@ -1,12 +1,30 @@
 module controls(
-  output reg [7:0] vol1, //Information about relative volume
-  output reg [7:0] vol2,
-  output reg [7:0] vol3,
-  output reg [7:0] vol4,
-  output reg [7:0] freq1, //Information about frequency, may not literally be frequency
-  output reg [7:0] freq2,
-  output reg [7:0] freq3,
-  output reg [7:0] freq4
+  input [3:0] switch, //There are four switches on the FPGA
+  // output reg [7:0] vol1, //Information about relative volume, probably actually easier than this, just need to say which channels to turn on
+  // output reg [7:0] vol2,
+  // output reg [7:0] vol3,
+  // output reg [7:0] vol4,
+  output reg [7:0] freq1 //Actually equal to 1/2 a period in clock cycles
+  // output reg [7:0] freq2,
+  // output reg [7:0] freq3,
+  // output reg [7:0] freq4
 );
-  //And then actually make the module
+  always @(switch) begin
+  if (switch === 4'd0) begin
+    //Do a pre-loaded thing
+      freq1 = 8'd20;
+      #200
+      freq1 = 8'd5;
+      #60
+      freq1 = 8'd1;
+      #40
+      freq1 = 8'd24;
+      #20
+      freq1 = 8'd20;
+  end
+  else begin
+    // Otherwise set frequency to the switch's value
+    freq1 <= switch;
+  end
+  end
 endmodule
