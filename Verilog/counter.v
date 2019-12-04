@@ -10,12 +10,14 @@ module counter
 
 initial count =0;
 
-always @(posedge clk)
-  if (reset==1) begin
-     count <= 8'b0 ;
-  end
-  else begin
-     count <= count + 1;
-  end
+always @(posedge clk) begin 
+  count <= count + 1;
+end
+
+always @(*) begin
+if (reset==1) begin
+   count <= 8'b0 ;
+end
+end
 
 endmodule
