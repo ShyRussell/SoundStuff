@@ -25,7 +25,7 @@ wire  [7:0]  count;
 // initial count = 8'b0;
 
 
-d_flip_flop sqwave_generator(.q(square_out),.q_inv(d_to_q_inv),.d(d_to_q_inv),.clk(clk));
+d_flip_flop sqwave_generator(.q(square_out),.q_inv(d_to_q_inv),.d(d_to_q_inv),.clk(inv_trigger));
 
 counter counter(.count(count),.clk(clk),.reset(inv_trigger));
 
