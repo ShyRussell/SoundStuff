@@ -14,7 +14,7 @@ module sawtooth_wave_test ();
     initial frequency_control=8'd32;
 
     // Instantiate Sawtooth Wave Generator
-    sawtooth_wave sawtooth_wave(.sawtooth_out(sawtooth_out),.clk(clk),.frequency_control(frequency_control));
+    square_wave square_wave(.square_out(square_out),.clk(clk),.frequency_control(frequency_control));
 
     // Test sequence
     initial begin
