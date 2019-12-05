@@ -1,14 +1,14 @@
 module controls(
   input [3:0] switch, //There are four switches on the FPGA
-  // output reg [7:0] vol1, //Information about relative volume, probably actually easier than this, just need to say which channels to turn on
-  // output reg [7:0] vol2,
-  // output reg [7:0] vol3,
-  // output reg [7:0] vol4,
   output reg [7:0] freq1, //Actually equal to 1/2 a period in clock cycles
   output reg [7:0] freq2
   // output reg [7:0] freq3,
   // output reg [7:0] freq4
 );
+//todo:
+//add length and counters
+//Change to output zero when off
+// Write pre written "songs"
   always @(switch) begin
   if (switch === 4'd0) begin
     //Do a pre-loaded thing
