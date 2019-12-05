@@ -3,7 +3,7 @@
 
 module counter_test ();
 
-    wire [7:0] count;
+    wire [3:0] count;
     reg clk;
     reg reset;
 
@@ -15,7 +15,7 @@ module counter_test ();
     initial reset=0;
 
     // Instantiate fake CPU
-    counter counter(.count(count),.clk(clk),.reset(reset));
+    counter #(4) counter (.count(count),.clk(clk),.reset(reset));
     // Test sequence
     initial begin
 

@@ -1,9 +1,9 @@
 // Sabrina Pereira, Shy Russell, Jonah Spicher
-`include "square_wave.v"
+`include "sawtooth_wave.v"
 
-module square_wave_test ();
+module sawtooth_wave_test ();
 
-    wire [7:0] square_out;
+    wire [7:0] sawtooth_out;
     reg clk;
     reg  [7:0] frequency_control;
 
@@ -11,16 +11,16 @@ module square_wave_test ();
     initial clk=0;
     always #10 clk = !clk;
 
-    initial frequency_control=8'd20;
+    initial frequency_control=8'd32;
 
-    // Instantiate Square Wave Generator
-    square_wave #(.resolution_bits(8), .counter_width(8)) square_wave(.square_out(square_out),.clk(clk),.frequency_control(frequency_control));
+    // Instantiate Sawtooth Wave Generator
+    sawtooth_wave sawtooth_wave(.sawtooth_out(sawtooth_out),.clk(clk),.frequency_control(frequency_control));
 
     // Test sequence
     initial begin
 
     	// Dump waveforms to file
-    	$dumpfile("square_wave.vcd");
+    	$dumpfile("sawtooth_wave.vcd");
     	$dumpvars();
 
     	// End execution after some time delay
