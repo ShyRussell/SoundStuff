@@ -14,6 +14,13 @@ module controls(
 // Make shifting adapt to frequencies
 // Write pre written songs
 
+initial begin
+freq1 = 0;
+freq2 = 0;
+freq3 = 0;
+freq4 = 0;
+end
+
   reg reset1, reset2, reset3, reset4;
   reg [7:0] len1, len2, len3, len4;
   wire [7:0] len_counter1, len_counter2, len_counter3, len_counter4;
@@ -70,11 +77,11 @@ module controls(
     len2 = -8'd1;
   end
   else if (switch[2]) begin
-    freq3 = 8'd100;
+    freq3 = 8'd10;
     len3 = -8'd1;
   end
   else if (switch[3]) begin
-  freq4 = 8'd100;
+  freq4 = 8'd10;
   len4 = -8'd1;
   end
   else begin

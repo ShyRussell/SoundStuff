@@ -11,19 +11,19 @@ module sound_card_test();
     $dumpfile("soundcard.vcd");
     $dumpvars();
     switch_ctrls = 4'b0001;
-    #1000
+    #10000
     switch_ctrls = 4'b0010;
-    #1000
+    #10000
     switch_ctrls = 4'b0100;
-    #1000
+    #10000
     switch_ctrls = 4'b1000;
-    #1000
+    #10000
     switch_ctrls = 4'b0000;
-    #1000
+    #10000
     switch_ctrls = 4'b1010;
-    #1000
+    #10000
     switch_ctrls = 4'b0101;
-    #1000
+    #10000
     $finish();
   end
 

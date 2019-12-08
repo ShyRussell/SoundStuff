@@ -15,8 +15,8 @@ module sound_card(
   controls in_ctrls(.switch(switches),.freq1(freq1),.freq2(freq2),.freq3(freq3),.freq4(freq4), .clk(clk));
 
   //Inputs send instructions to each channel
-  square_wave ch1(.square_out(ch1_out),.clk(clk),.frequency_control(freq1));
-  square_wave ch2(.square_out(ch2_out),.clk(clk),.frequency_control(freq2));
+  sound_square_wave ch1(.square_out(ch1_out),.clk(clk),.frequency_control(freq1));
+  sound_square_wave ch2(.square_out(ch2_out),.clk(clk),.frequency_control(freq2));
   sawtooth_wave ch3(.sawtooth_out(ch3_out),.clk(clk),.frequency_control(freq3));
 
   square_wave noise_pulse(.square_out(noise_freq_ctrl),.clk(clk),.frequency_control(freq4));
@@ -24,6 +24,6 @@ module sound_card(
 
   wire [7:0] combined;
   //Currently, this divides both channels by 2 and adds them, which should give roughly the right thing
-  shifter combine(.sound_out(combined),.Chl1(ch1_out),.Chl2(ch2_out),.Chl3(ch3_out),.Chl4(ch4_out));
+  shifter combine(.sound_out(combined),.Chl1(ch1_out),.Chl2(ch2_out),.Chl3(ch3_out),.Chl4(ch4_out),.freq1(freq1),.freq2(freq2),.freq3(freq3),.freq4(freq4));
 
   endmodule
