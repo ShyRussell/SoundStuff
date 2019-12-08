@@ -35,4 +35,8 @@ else
   inv_trigger=0;
 end
 
+always @(frequency_control) begin
+  inv_trigger=1;
+end
+
 endmodule

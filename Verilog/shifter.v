@@ -8,6 +8,6 @@ module shifter
   input[7:0] Chl4
   );
 
-assign sound_out = (Chl1>>2) + (Chl2>>2) + (Chl3>>2) + (Chl4>>2);
+assign sound_out = (Chl1>>>2) + (Chl2>>>2) + (Chl3>>>2) + (Chl4>>>2);
 
 endmodule
