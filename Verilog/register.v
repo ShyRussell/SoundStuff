@@ -5,14 +5,14 @@ D-flip flop and D-flip-flop with enable
 -----------------------------------------------------------------------------*/
 
 module d_flip_flop
-#(parameter width = 8)
+#(parameter width = 8, parameter initial_q = 0)
 (
 output reg[width-1:0] q,
 output wire[width-1:0] q_inv,
 input [width-1:0]      d,
 input                 clk
 );
-initial q=0;
+initial q=initial_q;
     assign q_inv = ~q;
     always @(posedge clk) begin
         q <= d;
