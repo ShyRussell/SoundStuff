@@ -2,7 +2,7 @@
 `include "square_wave.v"
 `include "input_controls.v"
 
-module square_wave_test ();
+module input_test ();
 
     wire [7:0] square_out;
     reg clk;
