@@ -23,6 +23,14 @@ module square_wave_test ();
     	$dumpfile("square_wave.vcd");
     	$dumpvars();
 
+      #208
+      frequency_control=8'd16;
+      #208
+      frequency_control=8'd2;
+      #208
+      frequency_control=8'd16;
+
+
     	// End execution after some time delay
     	#2000 $finish();
     end
