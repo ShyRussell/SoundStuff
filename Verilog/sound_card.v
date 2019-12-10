@@ -7,7 +7,6 @@
 
 module sound_card(
   output [7:0] combined,
-  input [3:0] switches,
   input clk
 );
   wire [11:0] freq1, freq2, freq3, freq4;
