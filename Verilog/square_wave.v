@@ -24,7 +24,7 @@ wire  [counter_width-1:0]  count;
 
 d_flip_flop #(.width(resolution_bits), .initial_q(initial_q)) sqwave_generator(.q(square_out),.q_inv(d_to_q_inv),.d(d_to_q_inv),.clk(inv_trigger));
 
-counter counter(.count(count),.clk(clk),.reset(inv_trigger));
+counter #(.width(counter_width)) counter(.count(count),.clk(clk),.reset(inv_trigger));
 
 
 // Controls for reset and waves

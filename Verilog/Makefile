@@ -10,7 +10,7 @@ ICARUS_OPTIONS := -Wall
 IVERILOG := iverilog $(ICARUS_OPTIONS)
 SIM := vvp
 
-TEST := shifter
+TEST := square_wave
 
 # square_wave.vvp: square_wave.v
 square_wave.vvp: square_wave.t.v square_wave.v
@@ -22,6 +22,14 @@ sawtooth_wave.vvp: sawtooth_wave.t.v sawtooth_wave.v
 
 counter.vvp: counter.t.v counter.v
 	$(IVERILOG) -o $@ $<
+
+input_controls.vvp: input_controls.t.v input_controls.v
+	$(IVERILOG) -o $@ $<
+
+
+noise_wave.vvp: noise_wave.t.v noise_wave.v
+	$(IVERILOG) -o $@ $<
+
 
 sawtooth_LUT.vvp: sawtooth_LUT.t.v sawtooth_LUT.v
 	$(IVERILOG) -o $@ $<
