@@ -6,10 +6,10 @@ module shifter
   input[7:0] Chl2,
   input[7:0] Chl3,
   input[7:0] Chl4,
-  input [7:0] freq1,
-  input [7:0] freq2,
-  input [7:0] freq3,
-  input [7:0] freq4
+  input [11:0] freq1,
+  input [11:0] freq2,
+  input [11:0] freq3,
+  input [11:0] freq4
   );
 
 reg [7:0] Chl1_norm, Chl2_norm, Chl3_norm, Chl4_norm;

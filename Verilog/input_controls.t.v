@@ -3,10 +3,8 @@
 `include "input_controls.v"
 
 module input_test ();
-
-    wire [7:0] square_out;
     reg clk;
-    wire  [7:0] freq1, freq2, freq3, freq4;
+    wire  [11:0] freq1, freq2, freq3, freq4;
 
 
     // Clock generation

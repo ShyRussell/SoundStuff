@@ -10,20 +10,8 @@ module sound_card_test();
   initial begin
     $dumpfile("soundcard.vcd");
     $dumpvars();
-    switch_ctrls = 4'b0001;
-    #10000
-    switch_ctrls = 4'b0010;
-    #10000
-    switch_ctrls = 4'b0100;
-    #10000
-    switch_ctrls = 4'b1000;
-    #10000
-    switch_ctrls = 4'b0000;
-    #10000
-    switch_ctrls = 4'b1010;
-    #10000
-    switch_ctrls = 4'b0101;
-    
+    $readmemh("notes.dat", chip.in_ctrls.music_storage.mem);
+    #10000000
     $finish();
   end
 
