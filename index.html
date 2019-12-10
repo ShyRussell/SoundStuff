@@ -242,13 +242,13 @@
         <div class="row">
           <div class="col-lg-9 text-center text-lg-left col-xl-12">
             <h3 class="cta-title">Reflection</h3>
-            <p> Overall, the teaming experience and collaboration worked well as each member was able to contribute and grow through taking point on different aspects of the project. For example:
-				<li>Shy: He focused on the documentation and schematic designing for this project along with developing the adder and bit shifter for the normalization. Shy also structured and developed the website for this project.</li>
-			  <br>
-				<li>Jonah: He was tasked with developing the inputs and the method in which they worked as he developed the connections between each modules while also being able to guide others with understanding how sound works and designing the noise channel for our design.</li>
+            <p class="cta-text"> Overall, the teaming experience and collaboration worked well as each member was able to contribute and grow through taking point on different aspects of the project. For example:
+				<li class="cta-text">Shy: He focused on the documentation and schematic designing for this project along with developing the adder and bit shifter for the normalization. Shy also structured and developed the website for this project.</li>
+			    <br>
+				<li class="cta-text">Jonah: He was tasked with developing the inputs and the method in which they worked as he developed the connections between each modules while also being able to guide others with understanding how sound works and designing the noise channel for our design.</li>
 				<br>
-				<li>Sabrina: She dove into designing the square and sawtooth wave generators through truly creative methods while also performing the math for finding the each specific note in respects to our system and its limitations.</li></p>
-			  <p>To discuss our final system, </p>
+				<li class="cta-text">Sabrina: She dove into designing the square and sawtooth wave generators and through truly creative methods design and troubleshoot different components while also performing the math for finding the each specific note in respects to our system and its limitations.</li></p>
+			  <p class="cta-text">To discuss our final system, it operates as desired as each component works together to output the results we expect. We were not able to implement goals that allowed us to dig deeper into the development of the physical sound hardware, but the Verilog simulation works as expected. It does not normalize volume as intelligently as we desired or implement it on FPGA, but it does have four channels that generate one wave each at a given frequency for its type. The frequency is controlled by input controlls that reads from memory and uses memory to iterate through what notes to play next. Finally, through a Python script, we compile the notes to create a .wav file to play the music.</p>
           </div>
 </div>
 
@@ -268,8 +268,7 @@
 			<li class="center">Ability to run Linux commands in terminal</li>
 			<li class="center">Cloned repository</li></p>
 		<p class="section-description">In terminal run:
-			<li class="center">cd SoundStuff/</li>
-			<li class="center">cd Verilog/</li>
+			<li class="center">cd SoundStuff/Verilog/</li>
 			<li class="center">make run</li></p>
         </div>
 </div>
@@ -284,20 +283,20 @@
           <p class="section-description">Here are some of the sound files we were able to develop:</p>
         </div>
 
-        <ul id="faq-list" class="wow fadeInUp">
+        <ul id="faq-list" class="wow fadeInUp" object align="middle">
 			<audio controls>
-			  <source src="viper.mp3" type="audio/mp3">
-			  <source src="viper.ogg" type="audio/ogg">
+			  <source src="viper.mp3" type="audio/wav">
 			  <p>Your browser doesn't support HTML5 audio. Here is a <a href="viper.mp3">link to the audio</a> instead.</p>
 			</audio>
 			<audio controls>
-			  <source src="viper.mp3" type="audio/mp3">
+			  <source src="viper.mp3" type="audio/wav">
 			  <p>Your browser doesn't support HTML5 audio. Here is a <a href="viper.mp3">link to the audio</a> instead.</p>
 			</audio>
 			<audio controls>
-			  <source src="viper.mp3" type="audio/mp3">
+			  <source src="viper.mp3" type="audio/wav">
 			  <p>Your browser doesn't support HTML5 audio. Here is a <a href="viper.mp3">link to the audio</a> instead.</p>
 			</audio>
+			
         </ul>
 
       </div>
@@ -317,15 +316,15 @@
 
         <ul id="list" class="wow fadeInUp">
           <li>
-            <a data-toggle="collapse" class="collapsed" href="#faq1">Harmonia. “Digital Audio: the Real Meaning of 8-Bit Music.” Medium, Medium, 21 Aug. 2019, medium.com/@harmonia.global/digital-audio-the-real-meaning-of-8-bit-music-1be5fc8ab2b1.</a>
+            <a data-toggle="collapse" class="collapsed">Harmonia. “Digital Audio: the Real Meaning of 8-Bit Music.” Medium, Medium, 21 Aug. 2019, medium.com/@harmonia.global/digital-audio-the-real-meaning-of-8-bit-music-1be5fc8ab2b1.</a>
           </li>
 
           <li>
-            <a data-toggle="collapse" href="#faq2" class="collapsed">&nbsp;The 8-Bit Guy, director. How Oldschool Sound/Music Worked. Youtube, 5 Oct. 2015, www.youtube.com/watch?v=q_3d1x2VPxk. </a>
+            <a data-toggle="collapse" class="collapsed">&nbsp;The 8-Bit Guy, director. How Oldschool Sound/Music Worked. Youtube, 5 Oct. 2015, www.youtube.com/watch?v=q_3d1x2VPxk. </a>
           </li>
 
           <li>
-            <a data-toggle="collapse" href="#faq3" class="collapsed">Suits, B. H. “Physics of Music - Notes.” Frequencies of Musical Notes, A4 = 440 Hz, pages.mtu.edu/~suits/notefreqs.html. </a>
+            <a data-toggle="collapse" class="collapsed">Suits, B. H. “Physics of Music - Notes.” Frequencies of Musical Notes, A4 = 440 Hz, pages.mtu.edu/~suits/notefreqs.html. </a>
           </li>
 
         </ul>
