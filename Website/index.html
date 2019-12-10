@@ -8,23 +8,23 @@
   <meta content="" name="description">
 
   <!-- Favicons -->
-  <link href="../../../Avilon/img/favicon.png" rel="icon">
-  <link href="../../../Avilon/img/apple-touch-icon.png" rel="apple-touch-icon">
+  <link href="img/favicon.png" rel="icon">
+  <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700|Open+Sans:300,300i,400,400i,700,700i" rel="stylesheet">
 
   <!-- Bootstrap CSS File -->
-  <link href="../../../Avilon/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
   <!-- Libraries CSS Files -->
-  <link href="../../../Avilon/lib/animate/animate.min.css" rel="stylesheet">
-  <link href="../../../Avilon/lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-  <link href="../../../Avilon/lib/ionicons/css/ionicons.min.css" rel="stylesheet">
-  <link href="../../../Avilon/lib/magnific-popup/magnific-popup.css" rel="stylesheet">
+  <link href="lib/animate/animate.min.css" rel="stylesheet">
+  <link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <link href="lib/ionicons/css/ionicons.min.css" rel="stylesheet">
+  <link href="lib/magnific-popup/magnific-popup.css" rel="stylesheet">
 
   <!-- Main Stylesheet File -->
-  <link href="../../../Avilon/css/style.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
 
   <!-- =======================================================
     Theme Name: Avilon
@@ -53,10 +53,7 @@
           <li class="menu-active"><a href="#intro">Home</a></li>
           <li><a href="#about">Overview</a></li>
           <li><a href="#features">Features</a></li>
-          <li></li>
           <li><a href="#team">Team</a></li>
-          
-          <li></li>
         </ul>
       </nav><!-- #nav-menu-container -->
     </div>
@@ -69,7 +66,7 @@
 
     <div class="intro-text">
       <h2>Welcome to 8-Bit Sound Stuff</h2>
-      <p>A team of ambitious student Computer Architects&nbsp;</p>
+      <p>A team of ambitious Student Computer Architects&nbsp;</p>
       <a href="#about" class="btn-get-started scrollto">Get Started</a>
     </div>
 
@@ -192,9 +189,8 @@
               <img class="advanced-feature-img-right wow fadeInRight" src="img/Components/Inputs.png" style="width: 555px; height: auto" alt="">
               <div class="wow fadeInLeft">
                 <h2>Inputs/Channels</h2>
-                <h3>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
-                <p>Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+<p>For our inputs, we use memory to store the notes that are previously and currently being used, using the nex_note as a clock, to then go into memory and output a 18-bit result where the first 8-bit control frequency, the next 8 controls the length of each note, and the final 2 bits control the channel to show which channel is on for this cycle.&nbsp; &nbsp;</p>
+                <p>From there, the different sections of the output is used in for the four channels through D-Flip-Flops that would AND the channel and frequency where if frequency is low (0), then the channel is also 0, but if frequency is high (1), then the channel would then pass through and allow length to pass through the D-Flip-Flop as well, resulting in the length of time in which each wave generator would be on for.&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</p>
               </div>
             </div>
           </div>
@@ -224,11 +220,11 @@
         <div class="container">
           <div class="row">
             <div class="col-12">
-              <img class="advanced-feature-img-right wow fadeInRight" src="img/Components/Adder.png" alt="">
+              <img class="advanced-feature-img-right wow fadeInRight" style="width: 555px; height: auto" src="img/Components/Adder.png" alt="">
               <div class="wow fadeInLeft">
                 <h2>Final Results</h2>
-                <h3>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</p>
+                <h3>The final product and what it does?&nbsp;</h3>
+                <p>For our project, we developed a Verilog representation of the 8-bit hardware that is able to generate 8-bit music using square, sawtooth, and noise channels for different aspects of the song.&nbsp; &nbsp; &nbsp;&nbsp;</p>
                 <i class="ion-ios-albums-outline"></i>
                 <p>Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
               </div>
@@ -272,17 +268,34 @@
         </div>
 </div>
     </section><!-- #more-features -->
+	  
+    <section id="faq">
+      <div class="container">
 
-    <!--==========================
-      Clients
-    ============================-->
-<section id="clients"> </section><!-- #more-features -->
+        <div class="section-header">
+          <h3 class="section-title">Sound Files&nbsp;</h3>
+          <span class="section-divider"></span>
+          <p class="section-description">Here are some of the sound files we were able to develop:</p>
+        </div>
 
-    <!--==========================
-      Pricing Section
-    ============================-->
-    <!-- #pricing -->
+        <ul id="faq-list" class="wow fadeInUp">
+			<audio controls>
+			  <source src="viper.mp3" type="audio/mp3">
+			  <source src="viper.ogg" type="audio/ogg">
+			  <p>Your browser doesn't support HTML5 audio. Here is a <a href="viper.mp3">link to the audio</a> instead.</p>
+			</audio>
+			<audio controls>
+			  <source src="viper.mp3" type="audio/mp3">
+			  <p>Your browser doesn't support HTML5 audio. Here is a <a href="viper.mp3">link to the audio</a> instead.</p>
+			</audio>
+			<audio controls>
+			  <source src="viper.mp3" type="audio/mp3">
+			  <p>Your browser doesn't support HTML5 audio. Here is a <a href="viper.mp3">link to the audio</a> instead.</p>
+			</audio>
+        </ul>
 
+      </div>
+</section><!-- #faq -->
 
     <!--==========================
       Frequently Asked Questions Section
@@ -423,20 +436,20 @@
   <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
 
   <!-- JavaScript Libraries -->
-  <script src="../../../Avilon/lib/jquery/jquery.min.js"></script>
-  <script src="../../../Avilon/lib/jquery/jquery-migrate.min.js"></script>
-  <script src="../../../Avilon/lib/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="../../../Avilon/lib/easing/easing.min.js"></script>
-  <script src="../../../Avilon/lib/wow/wow.min.js"></script>
-  <script src="../../../Avilon/lib/superfish/hoverIntent.js"></script>
-  <script src="../../../Avilon/lib/superfish/superfish.min.js"></script>
-  <script src="../../../Avilon/lib/magnific-popup/magnific-popup.min.js"></script>
+  <script src="lib/jquery/jquery.min.js"></script>
+  <script src="lib/jquery/jquery-migrate.min.js"></script>
+  <script src="lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="lib/easing/easing.min.js"></script>
+  <script src="lib/wow/wow.min.js"></script>
+  <script src="lib/superfish/hoverIntent.js"></script>
+  <script src="lib/superfish/superfish.min.js"></script>
+  <script src="lib/magnific-popup/magnific-popup.min.js"></script>
 
   <!-- Contact Form JavaScript File -->
-  <script src="../../../Avilon/contactform/contactform.js"></script>
+  <script src="contactform/contactform.js"></script>
 
   <!-- Template Main Javascript File -->
-  <script src="../../../Avilon/js/main.js"></script>
+  <script src="js/main.js"></script>
 
 </body>
 </html>
