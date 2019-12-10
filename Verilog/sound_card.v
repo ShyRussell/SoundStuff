@@ -4,7 +4,11 @@
 // `include "adder.v"
 `include "noise_wave.v"
 `include "shifter.v"
-
+/*
+The top level module, the sound card. Consists of four channels switched on and off
+at different frequencies by the input controls. Channel outputs are combined and
+output.
+*/
 module sound_card(
   output [7:0] combined,
   input clk
