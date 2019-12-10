@@ -120,7 +120,7 @@
             </ul>
 
             <p>
-              For this project, what we planned on accomplishing is developing the Verilog code then implement this code on the FPGA through an undetermined manner such that we are able to process the signal. The difference between the stretch and planned goals is that the stretch does not produce an actual sound through a speaker like in our desired stretch.
+              For this project, what we planned on accomplishing is developing the Verilog code then implement this code on the FPGA through an undetermined manner such that we are able to process the signal. The difference between the stretch and planned goals is that the planned goal does not produce an actual sound through a speaker like in our desired stretch.
             </p>
           </div>
         </div>
@@ -155,12 +155,12 @@
               <div class="col-lg-6 col-md-6 box wow fadeInRight">
 <!--                <div class="icon"><i class="ion-ios-speedometer-outline"></i></div>-->
                 <h4 class="title"><a href="">Inputs</a></h4>
-                <p class="description">TBD&nbsp;</p>
+                <p class="description">Our inputs are controlled by notes that are stored in memory and used for generating the wave lengths and frequencies by outputting 18-bit results. Different parts of the result is used to control the different channels turning them on or off.&nbsp;</p>
               </div>
               <div class="col-lg-6 col-md-6 box wow fadeInRight" data-wow-delay="0.1s">
 <!--                <div class="icon"><i class="ion-social-buffer-outline"></i></div>-->
                 <h4 class="title"><a href="">Channels</a></h4>
-                <p class="description">Our Channels are generate square, sawtooth and randomized waves based on the inputs.&nbsp; Each channel is equipped with a wave generator that uses counters to scaffold the frequency and lengths of the waves.&nbsp; &nbsp;&nbsp;</p>
+                <p class="description">Our Channels are generate square, sawtooth and noise waves based on the inputs.&nbsp; Each channel is equipped with a wave generator that uses counters to scaffold the frequency and lengths of the waves.&nbsp; &nbsp;&nbsp;</p>
               </div>
               <div class="col-lg-6 col-md-6 box wow fadeInRight offset-xl-3" data-wow-delay="0.2s">
 <!--                <div class="icon"><i class="ion-social-buffer-outline"></i></div>-->
@@ -189,7 +189,7 @@
               <img class="advanced-feature-img-right wow fadeInRight" src="img/Components/Inputs.png" style="width: 555px; height: auto" alt="">
               <div class="wow fadeInLeft">
                 <h2>Inputs/Channels</h2>
-<p>For our inputs, we use memory to store the notes that are previously and currently being used, using the nex_note as a clock, to then go into memory and output a 18-bit result where the first 8-bit control frequency, the next 8 controls the length of each note, and the final 2 bits control the channel to show which channel is on for this cycle.&nbsp; &nbsp;</p>
+<p>For our inputs, we use memory to store the notes that are previously and currently being used, using the next_note as a clock, to then go into memory and output a 18-bit result where the first 8-bit control frequency, the next 8 controls the length of each note, and the final 2 bits control the channel to show which channel is on for this cycle.&nbsp; &nbsp;</p>
                 <p>From there, the different sections of the output is used in for the four channels through D-Flip-Flops that would AND the channel and frequency where if frequency is low (0), then the channel is also 0, but if frequency is high (1), then the channel would then pass through and allow length to pass through the D-Flip-Flop as well, resulting in the length of time in which each wave generator would be on for.&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</p>
               </div>
             </div>
@@ -207,9 +207,9 @@
                 <i class="ion-ios-paper-outline wow fadeInRight" data-wow-duration="0.5s"></i>
                 <p class="wow fadeInRight" data-wow-duration="0.5s">The Adder takes in uses the four channels as inputs where we take signed 8-bit values from each wave.&nbsp; &nbsp; &nbsp;&nbsp;</p>
                 <i class="ion-ios-color-filter-outline wow fadeInRight" data-wow-delay="0.2s" data-wow-duration="0.5s"></i>
-                <p class="wow fadeInRight" data-wow-delay="0.2s" data-wow-duration="0.5s">The frequency of each channel would control which values are taken into the adder as a channel that is not on would be set to 0 automatically since the frequency will be 0.&nbsp; &nbsp; &nbsp;</p>
+                <p class="wow fadeInRight" data-wow-delay="0.2s" data-wow-duration="0.5s">The amplitude of each channel are the  values are taken into the adder. Channels that are not on have amplitudes and frequencies at zero.&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</p>
                 <i class="ion-ios-barcode-outline wow fadeInRight" data-wow-delay="0.4" data-wow-duration="0.5s"></i>
-                <p class="wow fadeInRight" data-wow-delay="0.4s" data-wow-duration="0.5s">Finally, each channel is normalized then bit shifted by 2 arithmetically, to preserve the sign, then all four values are added to produce an 8-bit sound_ out.</p>
+                <p class="wow fadeInRight" data-wow-delay="0.4s" data-wow-duration="0.5s">Finally, the signal is normalized then bit shifted by 2 arithmetically, to preserve the sign, then all four values are added to produce an 8-bit sound_ out.</p>
               </div>
             </div>
           </div>
@@ -242,13 +242,7 @@
         <div class="row">
           <div class="col-lg-9 text-center text-lg-left col-xl-12">
             <h3 class="cta-title">Reflection</h3>
-            <p class="cta-text"> Below is the reflection of all three members and their views on the teaming and project overall:&nbsp;</p>
-			  <li class="cta-text"> Sabrina:
-			  <p>Sjhidenfmekececeocme</p></li>
-			  <li class="cta-text"> Shy:
-			  <p>dihcnciocencdocdcdc</p></li>
-			  <li class="cta-text"> Jonah:
-			  <p>icvodnvionrvovi</p></li>
+            <p class="cta-text">Our system... &nbsp;</p>
           </div>
 </div>
 
@@ -264,7 +258,13 @@
         <div class="section-header">
           <h3 class="section-title">How to Run&nbsp;&nbsp;</h3>
           <span class="section-divider"></span>
-          <p class="section-description">Visit our Github Repo <a href="https://github.com/ShyRussell/SoundStuff">here</a>. Follow the instructions on our Readme for downloading and running our simulation.</p>
+          <p class="section-description">Demo Requirements:
+			<li class="center">Ability to run Linux commands in terminal</li>
+			<li class="center">Clone repository</li></p>
+		<p class="section-description">In terminal run:
+			<li class="center">cd SoundStuff/</li>
+			<li class="center">cd Verilog/</li>
+			<li class="center">make run</li></p>
         </div>
 </div>
     </section><!-- #more-features -->
@@ -359,8 +359,8 @@
               <h4>Jonah Spicher</h4>
               <span>Junior, ECE</span>
               <div class="social">
-                <a href="jspicher@olin.edu"><i class="fa fa-envelope"></i></a>
-                <a href="https://github.com/ShyRussell"><i class="fa fa-github"></i></a>
+                <a href="mailto: jspicher@olin.edu"><i class="fa fa-envelope"></i></a>
+                <a href="https://github.com/JonahSpicher"><i class="fa fa-github"></i></a>
               </div>
             </div>
           </div>
@@ -371,7 +371,7 @@
               <h4>Sabrina Pereira</h4>
               <span>Junior, ECE</span>
               <div class="social">
-                <a href="spereira@olin.edu"><i class="fa fa-envelope"></i></a>
+                <a href="mailto: spereira@olin.edu"><i class="fa fa-envelope"></i></a>
                 <a href="https://github.com/sabpereira"><i class="fa fa-github"></i></a>
               </div>
             </div>
@@ -383,7 +383,7 @@
               <h4>Shyheim Russell</h4>
               <span>Junio, ECE</span>
               <div class="social">
-                <a href="shy@olin.edu"><i class="fa fa-envelope"></i></a>
+                <a href="mailto: shy@olin.edu"><i class="fa fa-envelope"></i></a>
                 <a href="https://github.com/ShyRussell"><i class="fa fa-github"></i></a>              </div>
             </div>
           </div>
