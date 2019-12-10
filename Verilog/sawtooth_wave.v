@@ -1,6 +1,7 @@
 // Sabrina Pereira, Shy Russell, Jonah Spicher
 /*-----------------------------------------------------------------------------
-Sawtooth Wave Generator
+Sawtooth Wave Generator.
+Creates sawtooth wave with a period of length "frequency_control"
 -----------------------------------------------------------------------------*/
 `include "sawtooth_LUT.v"
 `include "square_wave.v"
@@ -16,7 +17,7 @@ module sawtooth_wave
 
 // Create appropriately slowed clock for sawtooth wave
 wire counter_clk;
-square_wave #(.resolution_bits(1), .counter_width(8))  clock_modifier(.square_out(counter_clk),.clk(clk),.frequency_control(frequency_control>>4));
+square_wave #(.resolution_bits(1), .counter_width(sqwave_counter_width))  clock_modifier(.square_out(counter_clk),.clk(clk),.frequency_control(frequency_control>>4));
 
 // Create counter for selecting output values
 wire [3:0] value_select;
