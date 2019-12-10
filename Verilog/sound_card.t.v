@@ -23,7 +23,7 @@ module sound_card_test();
     switch_ctrls = 4'b1010;
     #10000
     switch_ctrls = 4'b0101;
-    #10000
+    
     $finish();
   end
 

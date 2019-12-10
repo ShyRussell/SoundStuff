@@ -29,7 +29,7 @@ counter counter(.count(count),.clk(clk),.reset(inv_trigger));
 
 // Controls for reset and waves
 always @* begin
-if (count == frequency_control>>1 || count > frequency_control>>1)
+if (count == frequency_control>>1 || count > frequency_control>>1 || count < 0)
   inv_trigger=1;
 else
   inv_trigger=0;

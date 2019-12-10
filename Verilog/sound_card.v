@@ -15,8 +15,8 @@ module sound_card(
   controls in_ctrls(.switch(switches),.freq1(freq1),.freq2(freq2),.freq3(freq3),.freq4(freq4), .clk(clk));
 
   //Inputs send instructions to each channel
-  sound_square_wave ch1(.square_out(ch1_out),.clk(clk),.frequency_control(freq1));
-  sound_square_wave ch2(.square_out(ch2_out),.clk(clk),.frequency_control(freq2));
+  square_wave #(8, 8, 8'b10000000) ch1(.square_out(ch1_out),.clk(clk),.frequency_control(freq1));
+  square_wave #(8, 8, 8'b10000000) ch2(.square_out(ch2_out),.clk(clk),.frequency_control(freq2));
   sawtooth_wave ch3(.sawtooth_out(ch3_out),.clk(clk),.frequency_control(freq3));
 
   square_wave noise_pulse(.square_out(noise_freq_ctrl),.clk(clk),.frequency_control(freq4));
