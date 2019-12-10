@@ -1,4 +1,8 @@
 // Sabrina Pereira, Shy Russell, Jonah Spicher
+/*-----------------------------------------------------------------------------
+Square Wave Test Bench
+-----------------------------------------------------------------------------*/
+
 `include "square_wave.v"
 
 module square_wave_test ();
@@ -10,7 +14,6 @@ module square_wave_test ();
     // Clock generation
     initial clk=0;
     always #10 clk = !clk;
-
     initial frequency_control=8'd2;
 
     // Instantiate Square Wave Generator
@@ -29,7 +32,6 @@ module square_wave_test ();
       frequency_control=8'd2;
       #208
       frequency_control=8'd16;
-
 
     	// End execution after some time delay
     	#2000 $finish();

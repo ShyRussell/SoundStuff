@@ -1,4 +1,8 @@
 // Sabrina Pereira, Shy Russell, Jonah Spicher
+/*-----------------------------------------------------------------------------
+Sawtooth Wave Test Bench
+-----------------------------------------------------------------------------*/
+
 `include "sawtooth_wave.v"
 
 module sawtooth_wave_test ();

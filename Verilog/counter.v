@@ -1,11 +1,15 @@
+// Sabrina Pereira, Shy Russell, Jonah Spicher
+/*-----------------------------------------------------------------------------
+Counter module that counts by one every clock cycle.
+When reset is high, counter starts over.
+-----------------------------------------------------------------------------*/
 
 module counter
 #(parameter width = 8)
 (
     output reg[width-1:0] count,
-    input  clk,   // System clock
-    input  reset  // Control for the output frequency
-
+    input  clk,
+    input  reset
 );
 
 

@@ -1,4 +1,8 @@
 // Sabrina Pereira, Shy Russell, Jonah Spicher
+/*-----------------------------------------------------------------------------
+Sawtooth LUT Test Bench
+-----------------------------------------------------------------------------*/
+
 `include "sawtooth_LUT.v"
 
 module sawtooth_LUT_test ();
@@ -6,11 +10,6 @@ module sawtooth_LUT_test ();
     wire [7:0] sawtooth_out;
     reg  [3:0] control;
 
-    // Clock generation
-    // initial clk=0;
-    // always #10 clk = !clk;
-
-    // Instantiate LUT
     sawtooth_LUT sawtooth_LUT(.sawtooth_out(sawtooth_out),.control(control));
 
     // Test sequence

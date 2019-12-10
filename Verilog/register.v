@@ -1,7 +1,6 @@
 // Sabrina Pereira, Shy Russell, Jonah Spicher
-
 /*-----------------------------------------------------------------------------
-D-flip flop and D-flip-flop with enable
+Registers- D-flip flop and D-flip-flop with enable
 -----------------------------------------------------------------------------*/
 
 module d_flip_flop
