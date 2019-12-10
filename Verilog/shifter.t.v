@@ -1,3 +1,7 @@
+// Sabrina Pereira, Shy Russell, Jonah Spicher
+/*-----------------------------------------------------------------------------
+Shifter Test Bench
+-----------------------------------------------------------------------------*/
 `include "shifter.v"
 
 module shift_test ();
@@ -14,7 +18,7 @@ module shift_test ();
     $dumpvars();
     # 100
     Chl3 = 8'b10101010;
-    
+
     // End execution after some time delay
     #2000 $finish();
   end

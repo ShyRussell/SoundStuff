@@ -1,7 +1,13 @@
+// Sabrina Pereira, Shy Russell, Jonah Spicher
+/*-----------------------------------------------------------------------------
+Shifter, Normalizer and Adder
+Bit shifts the input channel waves and adds them in order to produce an
+output 8-bit wave.
+-----------------------------------------------------------------------------*/
+
 module shifter
 (
   output[7:0] sound_out,
-  // input clk,
   input[7:0] Chl1,
   input[7:0] Chl2,
   input[7:0] Chl3,
