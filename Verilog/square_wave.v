@@ -18,7 +18,7 @@ module square_wave
 wire  [resolution_bits-1:0]  d_to_q_inv; // Wire ~q to d
 reg  inv_trigger; //Tell when to invert signal
 
-// Wires for counter MAY NEED TO BE LARGER
+// Wires for counter
 wire  [counter_width-1:0]  count;
 
 
