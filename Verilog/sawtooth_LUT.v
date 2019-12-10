@@ -1,5 +1,8 @@
-// [-128. -111.  -94.  -77.  -60.  -43.  -26.   -9.    8.   25.   42.   59.   76.   93.  110.  127.]
-
+// Sabrina Pereira, Shy Russell, Jonah Spicher
+/*-----------------------------------------------------------------------------
+Sawtooth look-up table for values. 
+Used for the incremental and linear increase/dropping of the wave's values.
+-----------------------------------------------------------------------------*/
 
 module sawtooth_LUT
 (
