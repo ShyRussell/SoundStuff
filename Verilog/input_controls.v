@@ -28,6 +28,11 @@ module controls(
 
   reg reset1, reset2, reset3, reset4;
   wire [7:0] len_counter1, len_counter2, len_counter3, len_counter4;
+
+  // Create appropriately slowed clock for length counter
+  // wire counter_clk;
+  // square_wave #(.resolution_bits(1), .counter_width(12))  clock_modifier(.square_out(counter_clk),.clk(clk),.frequency_control(12'b101010111110));
+
   counter len1_count(.count(len_counter1),.clk(clk),.reset(reset1));
   counter len2_count(.count(len_counter2),.clk(clk),.reset(reset2));
   counter len3_count(.count(len_counter3),.clk(clk),.reset(reset3));
