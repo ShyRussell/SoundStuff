@@ -20,25 +20,25 @@ module shifter
 
 reg [7:0] Chl1_norm, Chl2_norm, Chl3_norm, Chl4_norm;
 always@(*) begin
-  if (freq1 === 0) begin
+  if ((freq1 === 0) || (freq1 === 12'd1)) begin
     Chl1_norm = 0;
   end
   else begin
     Chl1_norm = Chl1;
   end
-  if (freq2 === 0) begin
+  if ((freq2 === 0) || (freq1 === 12'd1)) begin
     Chl2_norm = 0;
   end
   else begin
     Chl2_norm = Chl2;
   end
-  if (freq3 === 0) begin
+  if ((freq3 === 0) || (freq1 === 12'd1)) begin
     Chl3_norm = 0;
   end
   else begin
     Chl3_norm = Chl3;
   end
-  if (freq4 === 0) begin
+  if ((freq4 === 0) || (freq1 === 12'd1)) begin
     Chl4_norm = 0;
   end
   else begin

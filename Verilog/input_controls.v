@@ -31,7 +31,7 @@ module controls(
 
   // Create appropriately slowed clock for length counter
   wire counter_clk;
-  square_wave #(.resolution_bits(1), .counter_width(12))  clock_modifier(.square_out(counter_clk),.clk(clk),.frequency_control(12'b101010111110));
+  square_wave #(.resolution_bits(1), .counter_width(12))  clock_modifier(.square_out(counter_clk),.clk(clk),.frequency_control(12'b010101011111));
 
   counter len1_count(.count(len_counter1),.clk(counter_clk),.reset(reset1));
   counter len2_count(.count(len_counter2),.clk(counter_clk),.reset(reset2));
