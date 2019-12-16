@@ -23,17 +23,17 @@ def build_note_string(freqs, channel, length, note, bpm=120):
     instr = instr + str(channel-1)
     #next, the length. This bit is harder.
     if length[0] == 'w':
-        l = (120/bpm) * 64
+        l = (float(120)/bpm) * 64
     elif length[0] == 'h':
-        l = (120/bpm) * 32
+        l = (float(120)/bpm) * 32
     elif length[0] == 'q':
-        l = (120/bpm) * 16
+        l = (float(120)/bpm) * 16
     elif length[0] == 'e':
-        l = (120/bpm) * 8
+        l = (float(120)/bpm) * 8
     elif length[0] == 's':
-        l = (120/bpm) * 4
+        l = (float(120)/bpm) * 4
     elif length[0] == 't':
-        l = (120/bpm) * 2
+        l = (float(120)/bpm) * 2
     if len(length) == 2: #Just never make it three please
         if length[1] == 't':
             l *= float(2)/3
@@ -56,23 +56,24 @@ def build_note_string(freqs, channel, length, note, bpm=120):
     return instr
 
 def wait(channel):
+    #print(channel)
     return '00' + str(channel-1) + '01000'
 
 def rest(channel, length, bpm=120):
     instr = '00' + str(channel-1)
 
     if length[0] == 'w':
-        l = (120/bpm) * 64
+        l = (float(120)/bpm) * 64
     elif length[0] == 'h':
-        l = (120/bpm) * 32
+        l = (float(120)/bpm) * 32
     elif length[0] == 'q':
-        l = (120/bpm) * 16
+        l = (float(120)/bpm) * 16
     elif length[0] == 'e':
-        l = (120/bpm) * 8
+        l = (float(120)/bpm) * 8
     elif length[0] == 's':
-        l = (120/bpm) * 4
+        l = (float(120)/bpm) * 4
     elif length[0] == 't':
-        l = (120/bpm) * 2
+        l = (float(120)/bpm) * 2
     if len(length) == 2: #Just never make it three please
         if length[1] == 't':
             l *= float(2)/3
@@ -94,20 +95,22 @@ def start():
 def end():
     return '11000000'
 
-def build_dat_file(note_list, note_dict):
+def build_dat_file(note_list, note_dict, bpm=120):
     f = open('notes.dat', mode='w')
     f.write(start() + '\n')
     for note in note_list:
+
         if len(note) == 3:
             #regular note
             #print(note)
-            instr = build_note_string(note_dict, note[0], note[1], note[2])
+            instr = build_note_string(note_dict, note[0], note[1], note[2], bpm)
             f.write(instr + '\n')
         elif len(note) == 2:
             #rest
-            instr = rest(note[0], note[1])
+            instr = rest(note[0], note[1], bpm)
             f.write(instr + '\n')
         elif len(note) == 1:
+            #print("The note is:", note)
             instr = wait(note[0])
             f.write(instr + '\n')
     f.write(end())
@@ -116,15 +119,7 @@ def build_dat_file(note_list, note_dict):
 
 
 notes = create_dict()
-print(notes['A#1'])
-instr = build_note_string(notes, 1, 'w', 'C1')
-print(instr)
-instr = build_note_string(notes, 4, 'h', 'B6')
-print(instr)
-instr = rest(4, 'q')
-print(instr)
-instr = wait(3)
-print(instr)
+
 zelda_mel = [[1, 'q', 'A#4'], [1], [1, 'q'], [1], [1, 'qt'], [1], [1, 'st', 'A#4'], [1], [1, 'st'], [1], [1, 'st', 'A#4'], [1], [1, 'st'], [1],
       [1, 'st', 'A#4'], [1], [1, 'st'], [1], [1, 'st', 'A#4'], [1], [1, 'st'], [1], [1, 'et', 'A#4'], [1], [1, 'et'], [1], [1, 'st', 'G#4'], [1], [1, 'st'], [1],
       [1, 'q', 'A#4'], [1], [1, 'qt'], [1],
@@ -134,10 +129,32 @@ zelda_mel = [[1, 'q', 'A#4'], [1], [1, 'q'], [1], [1, 'qt'], [1], [1, 'st', 'A#4
       [1, 'st', 'A#4'], [1], [1, 'st'], [1], [1, 'e', 'A#4'], [1],
       [1, 't', 'F4'], [1], [1, 't'], [1], [1, 't', 'F4'], [1], [1, 't'], [1], [1, 'sd', 'F4'], [1], [1, 't'], [1],
       [1, 't', 'F4'], [1], [1, 't'], [1], [1, 't', 'F4'], [1], [1, 't'], [1], [1, 'sd', 'F4'], [1], [1, 't'], [1],
-      [1, 't', 'F4'], [1], [1, 't'], [1], [1, 't', 'F4'], [1], [1, 't'], [1], [1, 'sd', 'F4'], [1, 't'], [1], [1, 'e', 'F4'], [1],
+      [1, 't', 'F4'], [1], [1, 't'], [1], [1, 't', 'F4'], [1], [1, 't'], [1], [1, 'sd', 'F4'], [1], [1, 't'], [1], [1, 'e', 'F4'], [1],
       [1, 'q', 'A#4'], [1], [1, 'q', 'F4'], [1], [1, 'ed', 'F4'], [1], [1, 't', 'A#4'], [1], [1, 't'], [1],
       [1, 's', 'A#4'], [1], [1, 's', 'C5'], [1], [1, 's', 'D5'], [1], [1, 's', 'D#5'], [1], [1, 'h', 'F5'], [1],
       [1, 'e'], [1], [1, 'sd', 'F5'], [1], [1, 't'], [1], [1, 'et', 'F5'], [1], [1, 'et', 'F#5'], [1], [1, 'et', 'G#5'], [1],
       [1, 'h', 'A#5'], [1], [1, 'et'], [1], [1, 'st', 'A#5'], [1], [1, 'st'], [1], [1, 'st', 'A#5'], [1], [1, 'st'], [1], [1, 'et', 'A#5'], [1],
-      [1, 'et', 'G#5'], [1], [1, 'et', 'F#5'], [1], [1, 'et', 'G#5'], [1], [1, 'et'], [1], [1, 'et', 'F#5'], [1], [1, 'h', 'F5'], [1]]
-build_dat_file(zelda_mel, notes)
+      [1, 'et', 'G#5'], [1], [1, 'et', 'F#5'], [1], [1, 'et', 'G#5'], [1], [1, 'et'], [1], [1, 'et', 'F#5'], [1], [1, 'qd', 'F5'], [1],
+      [1, 'e'], [1], [1, 'q', 'F5'], [1], [1, 'sd', 'D#5'], [1], [1, 't'], [1], [1, 's', 'D#5'], [1], [1, 's', 'F5'], [1],
+      [1, 'h', 'F#5'], [1], [1, 'e', 'F5'], [1], [1, 'e', 'D#5'], [1], [1, 'sd', 'C#5'], [1], [1, 't'], [1], [1, 's', 'C#5'], [1],
+      [1, 's', 'D#5'], [1], [1, 'h', 'F5'], [1], [1, 'e', 'D#5'], [1], [1, 'e', 'D5'], [1], [1, 'sd', 'C5'], [1], [1, 't'], [1],
+      [1, 's', 'C5'], [1], [1, 's', 'D5'], [1], [1, 'h', 'E5'], [1], [1, 'q', 'G5'], [1], [1, 'q', 'F5'], [1]]
+
+#For mario, use bpm 360
+mario_mel = [[1, 'ed', 'E5'], [1], [1, 's'], [1], [1, 'ed', 'E5'], [1], [1, 's'], [1], [1, 'q'], [1], [1, 'q', 'E5'], [1],
+[1, 'q'], [1], [1, 'q', 'C5'], [1], [1, 'q', 'E5'], [1], [1, 'q'], [1], [1, 'q', 'G5'], [1], [1, 'hd'], [1], [1, 'q', 'G4'], [1], [1, 'hd'], [1],
+[1, 'q', 'C5'], [1], [1, 'h'], [1], [1, 'q', 'G4'], [1], [1, 'h'], [1], [1, 'q', 'E4'], [1], [1, 'h'], [1],
+[1, 'q', 'A4'], [1], [1, 'q'], [1], [1, 'q', 'B4'], [1], [1, 'q'], [1], [1, 'q', 'A#4'], [1], [1, 'q', 'A4'], [1], [1, 'q'], [1],
+[1, 'ht', 'G4'], [1], [1, 'ht', 'E5'], [1], [1, 'ht', 'G5'], [1], [1, 'q', 'A5'], [1], [1, 'q'], [1], [1, 'q', 'F5'], [1], [1, 'q', 'G5'], [1],
+[1, 'q'], [1], [1, 'q', 'E5'], [1], [1, 'q'], [1], [1, 'q', 'C5'], [1], [1, 'q', 'D5'], [1], [1, 'q', 'B4'], [1],
+[1, 'h'], [1], [1, 'q', 'C5'], [1], [1, 'h'], [1], [1, 'q', 'G4'], [1], [1, 'h'], [1], [1, 'q', 'E4'], [1], [1, 'h'], [1],
+[1, 'q', 'A4'], [1], [1, 'q'], [1], [1, 'q', 'B4'], [1], [1, 'q'], [1], [1, 'q', 'A#4'], [1], [1, 'q', 'A4'], [1], [1, 'q'], [1],
+[1, 'ht', 'G4'], [1], [1, 'ht', 'E5'], [1], [1, 'ht', 'G5'], [1], [1, 'q', 'A5'], [1], [1, 'q'], [1], [1, 'q', 'F5'], [1], [1, 'q', 'G5'], [1],
+[1, 'q'], [1], [1, 'q', 'E5'], [1], [1, 'q'], [1], [1, 'q', 'C5'], [1], [1, 'q', 'D5'], [1], [1, 'q', 'B4'], [1],
+[1, 'w'], [1], [1, 'q', 'G5'], [1], [1, 'q', 'F#5'], [1], [1, 'q', 'F5'],  [1], [1, 'q', 'D#5'], [1],
+[1, 'q'], [1], [1, 'q', 'E5'], [1], [1, 'q'], [1], [1, 'q', 'G#4'], [1], [1, 'q', 'A4'], [1], [1, 'q', 'C5'], [1],
+[1, 'q'], [1, 'q', 'A4'], [1], [1, 'q', 'C5'], [1], [1, 'q'], [1, 'q', 'A4'], [1], [1, 'q', 'C5'], [1],
+[1, 'q', 'D5'], [1], [1, 'h'], [1], [1, 'q', 'G5'], [1], [1, 'q', 'F#5'], [1], [1, 'q', 'F5'],  [1], [1, 'q', 'D#5'], [1],
+[1, 'q'], [1], [1, 'q', 'E5'], [1], [1, 'q'], [1], [1, 'q', 'A5'], [1], [1, 'q'], [1], [1, 'ed', 'A5'], [1], [1, 'e'], [1], [1, 'q', 'A5'], [1]]
+
+build_dat_file(mario_mel, notes, bpm=360)
