@@ -24,7 +24,7 @@ module sound_card_test();
   initial begin
     $dumpfile("soundcard.vcd");
     $dumpvars();
-    $readmemh("notes.dat", chip.in_ctrls.music_storage.mem); //Reads hex input
+    $readmemh("../Music/cinderella.dat", chip.in_ctrls.music_storage.mem); //Reads hex input
   end
   always @(*) begin
     if (chip.in_ctrls.music_storage.note === 32'h11000000) begin
